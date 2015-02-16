@@ -1,7 +1,8 @@
-cd GCGWVM
+cd OVSRoot
 ./tar_update
-cd ../OFVM
+cd ../OVSvms
 ./tar_update
-cd ../VLCVM
+cd ../EgressGWs
 ./tar_update 
-cd ../
+cd ../IngressGW
+./tar_update

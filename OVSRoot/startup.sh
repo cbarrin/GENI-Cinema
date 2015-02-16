@@ -27,6 +27,8 @@ ovs-vswitchd --pidfile --detach
 
 #echo "adding bridges"
 
+
+
 ovs-vsctl add-br br_OVS
 
 echo "adding ports for br_eth1"
