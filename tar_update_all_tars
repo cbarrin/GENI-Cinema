@@ -1,0 +1,7 @@
+cd GCGWVM
+./tar_update
+cd ../OFVM
+./tar_update
+cd ../VLCVM
+./tar_update 
+cd ../
