@@ -27,17 +27,18 @@ ovs-vswitchd --pidfile --detach
 
 #echo "adding bridges"
 
+
+
 ovs-vsctl add-br br_OVS
 
 echo "adding ports for br_eth1"
 ovs-vsctl add-port br_OVS eth1
 ovs-vsctl add-port br_OVS eth2
+ovs-vsctl add-port br_OVS eth3
+ovs-vsctl add-port br_OVS eth4
+ovs-vsctl add-port br_OVS eth5
+ovs-vsctl add-port br_OVS eth6
 
-
-# change here
-USERNAME=`cat username`
-OVSNUMBER = `cat /users/$USERNAME/OVSNUMBER`
-
-ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000002211
+ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000001111
 
 ovs-vsctl set-fail-mode br_OVS secure

@@ -1,0 +1,8 @@
+cd OVSRoot
+./tar_update
+cd ../OVSvms
+./tar_update
+cd ../EgressGWs
+./tar_update 
+cd ../IngressGW
+./tar_update

@@ -36,7 +36,7 @@ ovs-vsctl add-port br_OVS eth2
 
 # change here
 USERNAME=`cat username`
-OVSNUMBER = `cat /users/$USERNAME/OVSNUMBER`
+OVSNUMBER = `cat /home/$USERNAME/OVSNUMBER`
 
 ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000002211
 

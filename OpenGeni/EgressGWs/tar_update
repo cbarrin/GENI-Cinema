@@ -1,0 +1,2 @@
+rm initial_tarball.tar.gz
+tar -cvzf initial_tarball.tar.gz *

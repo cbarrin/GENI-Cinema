@@ -1,6 +1,6 @@
 echo "Enter username:"
 read USERNAME
-echo $USERNAME > /users/$USERNAME/username
+echo $USERNAME > /home/$USERNAME/username
 
 
 sudo apt-get install gcc

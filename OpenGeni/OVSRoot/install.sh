@@ -1,10 +1,7 @@
 echo "Enter username:"
 read USERNAME
-echo $USERNAME > /users/$USERNAME/username
+echo $USERNAME > /home/$USERNAME/username
 
-echo "Enter OVS number"
-read OVSVNUMBER
-echo $OVSVNUMBER > /users/$USERNAME/OVSNUMBER
 
 sudo apt-get install gcc
 sudo apt-get install make
@@ -18,12 +15,12 @@ sudo apt-get install libavcodec-extra-53 -y
 #install OVS
 apt-get install pkg-config autoconf automake linux-libc-dev libtool libssl-devlinux-headers-`uname -r` -y
 wget http://openvswitch.org/releases/openvswitch-2.3.0.tar.gz
-tar -xvzf /users/$USERNAME/openvswitch-2.3.0.tar.gz
+tar -xvzf /home/$USERNAME/openvswitch-2.3.0.tar.gz
 cd openvswitch-2.3.0
-/users/jvporte/openvswitch-2.3.0/configure --with-linux=/lib/modules/`uname -r`/build
+/home/$USERNAME/openvswitch-2.3.0/configure --with-linux=/lib/modules/`uname -r`/build
 make
 make install
 make modules_install
-insmod /users/jvporte/openvswitch-2.3.0/datapath/linux/openvswitch.ko
+insmod /home/$USERNAME/openvswitch-2.3.0/datapath/linux/openvswitch.ko
 mkdir -p /usr/local/etc/openvswitch/
-ovsdb-tool create /usr/local/etc/openvswitch/conf.db /users/jvporte/openvswitch-2.3.0/vswitchd/vswitch.ovsschema
+ovsdb-tool create /usr/local/etc/openvswitch/conf.db /home/$USERNAME/openvswitch-2.3.0/vswitchd/vswitch.ovsschema

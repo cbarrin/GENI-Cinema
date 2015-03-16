@@ -27,17 +27,17 @@ ovs-vswitchd --pidfile --detach
 
 #echo "adding bridges"
 
+ip = "$(ifconfig | grep -A 1 'eth1' | tail -1 | cut -d ':' -f 2 | cut -d ' ' -f 1)"
+sudo ifconfig eth1 0.0.0.0
+
 ovs-vsctl add-br br_OVS
 
 echo "adding ports for br_eth1"
 ovs-vsctl add-port br_OVS eth1
-ovs-vsctl add-port br_OVS eth2
 
+sudo ifconfig eth1 $ip
+route add -net 10.0.0.0 netmask 255.255.255.0 dev eth1
 
-# change here
-USERNAME=`cat username`
-OVSNUMBER = `cat /users/$USERNAME/OVSNUMBER`
-
-ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000002211
+ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000000011
 
 ovs-vsctl set-fail-mode br_OVS secure
