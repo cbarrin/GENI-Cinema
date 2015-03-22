@@ -33,10 +33,14 @@ sudo ifconfig eth1 0.0.0.0
 ovs-vsctl add-br br_OVS
 
 echo "adding ports for br_eth1"
-ovs-vsctl add-port br_OVS eth1
+#ovs-vsctl add-port br_OVS eth1
 
-sudo ifconfig eth1 $ip
-route add -net 10.0.0.0 netmask 255.255.255.0 dev eth1
+ovs-vsctl add-br br_v3724 br_OVS 3724
+ovs-vsctl add-port br_OVS vlan3724 tag=3724
+
+
+#sudo ifconfig eth1 $ip
+#route add -net 10.0.0.0 netmask 255.255.255.0 dev eth1
 
 ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000000011
 

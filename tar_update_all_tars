@@ -1,8 +1,18 @@
 cd OVSRoot
-./tar_update
-cd ../OVSvms
-./tar_update
-cd ../EgressGWs
-./tar_update 
-cd ../IngressGW
-./tar_update
+rm initial_tarball.tar.gz
+tar -cvzf initial_tarball.tar.gz *
+cd ../
+
+cd OVSvms
+rm initial_tarball.tar.gz
+tar -cvzf initial_tarball.tar.gz *
+cd ../
+
+cd EgressGWs
+rm initial_tarball.tar.gz
+tar -cvzf initial_tarball.tar.gz *
+cd ../
+
+cd IngressGW
+rm initial_tarball.tar.gz
+tar -cvzf initial_tarball.tar.gz *
