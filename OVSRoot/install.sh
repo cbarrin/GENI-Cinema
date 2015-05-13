@@ -13,7 +13,7 @@ sudo apt-get install libavcodec-dev -y
 sudo apt-get install libavcodec-extra-53 -y
 
 #install OVS
-sudo apt-get install pkg-config autoconf automake linux-libc-dev libtool libssl-devlinux-headers-`uname -r` -y
+sudo apt-get install pkg-config autoconf automake linux-libc-dev libtool libssl-dev linux-headers-`uname -r` -y
 sudo wget http://openvswitch.org/releases/openvswitch-2.3.0.tar.gz
 sudo tar -xvzf /users/$USERNAME/openvswitch-2.3.0.tar.gz
 cd openvswitch-2.3.0
