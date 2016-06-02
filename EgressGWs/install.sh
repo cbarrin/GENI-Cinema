@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
 #echo "Enter username:"
 #read USERNAME
 #echo $USERNAME > /users/$USERNAME/username
 
-USERNAME="jvporte"
+USERNAME="cbarrin"
 sudo apt-get install gcc
 sudo apt-get install make
 sudo apt-get update

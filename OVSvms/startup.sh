@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #echo "OVS: Configuring OVS..."
 #echo "OVS: Checking for kernel module..."
 #if [ -e $(lsmod | grep openvswitch) ]
@@ -38,7 +39,7 @@ ovs-vsctl add-port br_OVS vlan3554 tag=3554
 
 # change here
 USERNAME=`cat username`
-OVSNUMBER = `cat /users/$USERNAME/OVSNUMBER`
+OVSNUMBER = `cat /users/${USERNAME}/OVSNUMBER`
 
 ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000002222
 

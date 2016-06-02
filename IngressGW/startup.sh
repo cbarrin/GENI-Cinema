@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #echo "OVS: Configuring OVS..."
 #echo "OVS: Checking for kernel module..."
 #if [ -e $(lsmod | grep openvswitch) ]
