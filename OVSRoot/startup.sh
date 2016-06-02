@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 echo "OVS: Configuring OVS..."
 #echo "OVS: Checking for kernel module..."
 #if [ -e $(lsmod | grep openvswitch) ]
@@ -28,26 +29,17 @@ ovs-vswitchd --pidfile --detach
 #echo "adding bridges"
 
 
-
 ovs-vsctl add-br br_OVS
 
 ovs-vsctl add-br br_v3501 br_OVS 3501
-ovs-vsctl add-br br_v3502 br_OVS 3502
-ovs-vsctl add-br br_v3503 br_OVS 3503
-ovs-vsctl add-br br_v3505 br_OVS 3505
-ovs-vsctl add-br br_v3506 br_OVS 3506
+ovs-vsctl add-br br_v3507 br_OVS 3507
 ovs-vsctl add-br br_v3508 br_OVS 3508
-ovs-vsctl add-br br_v3509 br_OVS 3509
-ovs-vsctl add-br br_v3510 br_OVS 3510
+ovs-vsctl add-br br_v3512 br_OVS 3512
 
 ovs-vsctl add-port br_OVS vlan3501 tag=3501
-ovs-vsctl add-port br_OVS vlan3502 tag=3502
-ovs-vsctl add-port br_OVS vlan3503 tag=3503
-ovs-vsctl add-port br_OVS vlan3505 tag=3505
-ovs-vsctl add-port br_OVS vlan3506 tag=3506
+ovs-vsctl add-port br_OVS vlan3507 tag=3507
 ovs-vsctl add-port br_OVS vlan3508 tag=3508
-ovs-vsctl add-port br_OVS vlan3509 tag=3509
-ovs-vsctl add-port br_OVS vlan3510 tag=3510
+ovs-vsctl add-port br_OVS vlan3512 tag=3512
 
 ovs-vsctl set bridge br_OVS other-config:datapath-id=0000000000001111
 ovs-vsctl set-fail-mode br_OVS secure
